@@ -11,6 +11,18 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/lang/es/).
 
 ---
 
+## [0.2.0] - 2026-07-20
+
+### Added
+- Skill `skills/enviar-correos/SKILL.md` para Claude Code (adaptable a otros
+  agentes): capa de uso sobre la config multi-cuenta con confirmacion
+  obligatoria (correo completo y literal), eleccion de cuenta, adjuntos con
+  ruta WSL y fallback JSON-RPC. Publicada con placeholders, sin datos reales.
+- Seccion Roadmap en README: Calendar y Drive multi-cuenta con el mismo patron
+  de HOME por instancia, y skills de uso equivalentes.
+
+---
+
 ## [0.1.0] - 2026-07-20
 
 ### Agregado

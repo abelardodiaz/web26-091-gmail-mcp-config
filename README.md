@@ -62,3 +62,28 @@ scripts/ejemplo-send-mcp-directo.py -> fallback JSON-RPC stdio sin cliente MCP
   `client_secret*.json` (el `.gitignore` de este repo los bloquea).
 - Los tokens se regeneran con el paso 3; el client JSON se re-descarga de la
   consola de GCP. No hay nada irrecuperable fuera del repo.
+
+## Skill para agentes de IA
+
+En [`skills/enviar-correos/SKILL.md`](skills/enviar-correos/SKILL.md) hay una
+skill lista para Claude Code (adaptable a otros agentes) que agrega la capa de
+USO sobre esta configuracion: eleccion de cuenta, confirmacion obligatoria
+mostrando el correo completo antes de enviar, adjuntos con ruta WSL, y el
+fallback JSON-RPC para cuando el servidor se registro con la sesion ya abierta.
+
+Instalacion: copiala a `~/.claude/skills/enviar-correos/` y edita cuentas y
+rutas a tu instalacion (la skill viene con placeholders, no con datos reales).
+
+## Roadmap
+
+El truco central de este repo (una instancia por cuenta, cada una con su propio
+`HOME`) aplica a cualquier servidor MCP de Google Workspace, no solo Gmail:
+
+- [ ] **Google Calendar multi-cuenta**: wrappers equivalentes para un servidor
+      MCP de Calendar (crear/consultar eventos desde el agente, por cuenta).
+- [ ] **Google Drive multi-cuenta**: wrappers equivalentes para un servidor MCP
+      de Drive (buscar/leer/subir archivos por cuenta).
+- [ ] Skills de uso para Calendar y Drive, al estilo de `enviar-correos`.
+
+El objetivo: manejar varias cuentas de Google Workspace desde Claude Code y
+otros agentes de IA con el mismo patron, sin mezclar credenciales.

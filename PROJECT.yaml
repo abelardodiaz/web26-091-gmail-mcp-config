@@ -25,7 +25,7 @@
 project:
   code: web26-091
   name: Gmail MCP Config
-  version: 0.1.0
+  version: 0.2.0
   status: production
   description: Configuracion multi-cuenta del servidor MCP de Gmail en WSL (wrappers con HOME por instancia, sin secretos)
 
@@ -47,4 +47,4 @@ stack:
     - python (fallback JSON-RPC stdio)
 
 updated_at: "2026-07-20T00:00:00"
-updated_by: claude-996
+updated_by: claude-073
