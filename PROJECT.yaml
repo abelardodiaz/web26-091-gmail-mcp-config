@@ -1,0 +1,50 @@
+# ============================================================================
+# PROJECT.yaml - Archivo de metadatos del proyecto
+# ============================================================================
+#
+# PARA CLAUDE (IA): Este archivo es leido por el Project Manager (99999) para:
+#   1. Detectar el estado del proyecto (online/offline)
+#   2. Saber que puertos monitorear
+#   3. Entender la arquitectura del proyecto
+#
+# INSTRUCCIONES PARA CLAUDE:
+#   - Si haces cambios de version, actualiza 'project.version'
+#   - Siempre actualiza 'updated_at' y 'updated_by' al modificar
+#   - El 'updated_by' debe ser tu identificador (ej: claude-091)
+#
+# NO MODIFICAR SIN RAZON:
+#   - project.code (identificador unico)
+#   - server.location (donde corre el proyecto)
+#   - server.base_path (ruta del proyecto)
+#
+# NOTA: repo publico. base_path relativo a proposito - las rutas reales de
+# esta maquina viven en PRIVATE-NOTES.md (gitignored).
+#
+# ============================================================================
+
+project:
+  code: web26-091
+  name: Gmail MCP Config
+  version: 0.1.0
+  status: production
+  description: Configuracion multi-cuenta del servidor MCP de Gmail en WSL (wrappers con HOME por instancia, sin secretos)
+
+server:
+  location: wsl
+  base_path: .
+
+service:
+  type: none
+  expect_offline: true
+
+urls:
+  repository: https://github.com/abelardodiaz/web26-091-gmail-mcp-config
+
+stack:
+  primary: bash
+  components:
+    - "@gongrzhe/server-gmail-autoauth-mcp (npx)"
+    - python (fallback JSON-RPC stdio)
+
+updated_at: "2026-07-20T00:00:00"
+updated_by: claude-996
